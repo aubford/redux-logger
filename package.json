@@ -12,9 +12,7 @@
     "coverage:html": "nyc report --reporter=html && http-server -p 8077 ./coverage -o",
     "coverage:production": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "clean": "rimraf dist",
-    "build": "rollup -c",
-    "precommit": "npm test",
-    "prepublish": "npm run clean && npm test && npm run build"
+    "build": "rollup -c"
   },
   "eslintConfig": {
     "extends": "airbnb",

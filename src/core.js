@@ -77,12 +77,12 @@ function printBuffer(buffer, options) {
     try {
       if (isCollapsed) {
         if (colors.title && isUsingDefaultFormatter) {
-          logger.groupCollapsed(`%c ${title}`, ...headerCSS);
+          // logger.groupCollapsed(`%c ${title}`, ...headerCSS);
         } else logger.groupCollapsed(title);
       } else if (colors.title && isUsingDefaultFormatter) {
-        logger.group(`%c ${title}`, ...headerCSS);
+        // logger.group(`%c ${title}`, ...headerCSS);
       } else {
-        logger.group(title);
+        // logger.group(title);
       }
     } catch (e) {
       logger.log(title);
@@ -97,7 +97,7 @@ function printBuffer(buffer, options) {
       if (colors.prevState) {
         const styles = `color: ${colors.prevState(prevState)}; font-weight: bold`;
 
-        logger[prevStateLevel]('%c prev state', styles, prevState);
+        // logger[prevStateLevel]('%c prev state', styles, prevState);
       } else logger[prevStateLevel]('prev state', prevState);
     }
 
@@ -121,25 +121,25 @@ function printBuffer(buffer, options) {
       if (colors.nextState) {
         const styles = `color: ${colors.nextState(nextState)}; font-weight: bold`;
 
-        logger[nextStateLevel]('%c next state', styles, nextState);
+        // logger[nextStateLevel]('%c next state', styles, nextState);
       } else logger[nextStateLevel]('next state', nextState);
     }
 
     if (logger.withTrace) {
-      logger.groupCollapsed(`TRACE`);
+      // logger.groupCollapsed(`TRACE`);
       logger.trace();
-      logger.groupEnd();
+      // logger.groupEnd();
     }
 
     if (diff) {
       diffLogger(prevState, nextState, logger, isCollapsed);
     }
 
-    try {
-      logger.groupEnd();
-    } catch (e) {
-      logger.log('—— log end ——');
-    }
+    // try {
+    //   logger.groupEnd();
+    // } catch (e) {
+    //   logger.log('—— log end ——');
+    // }
   });
 }
 
